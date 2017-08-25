@@ -136,3 +136,11 @@ def search_by_activity_name(activity_name, lang_code, page=None,
         return Activity.paginate(page=page, pagesize=pagesize, Qcomb=Qcomb)
     else:
         return Activity.query(Qcombination=Qcomb)
+
+
+def search_by_category(category_name, page=None, pagesize=None):
+    Qcomb = me.Q(**{'categories__iexact': category_name})
+    if page:
+        return Activity.paginate(page=page, pagesize=pagesize, Qcomb=Qcomb)
+    else:
+        return Activity.query(Qcombination=Qcomb)

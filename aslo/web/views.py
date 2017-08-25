@@ -69,3 +69,13 @@ def serve_bundle(bundle_id, bundle_name):
     else:
         flash("{} doesn't exists".format(bundle_name), 'error')
         return redirect(url_for('web.index'))
+
+
+@web.route('/categories/<category_name>')
+@web.route('/categories/<category_name>/<int:page>')
+def categories(category_name, page=1, items_per_page=10):
+    if not category_name:
+        return redirect(url_for('web.index'))
+    activities = activity_service.search_by_category(category_name, page=page)
+    return render_template('index.html', activities=activities,
+                           category_query=category_name)

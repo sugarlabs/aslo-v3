@@ -13,7 +13,7 @@
           {{ _('language')}}  {{ _('geography')}}  {{ _('documents')}}  {{ _('music')}}  {{ _('media')}} 
           {{ _('art')}}  {{ _('teacher')}}  {{ _('system')}} --> 
         {% for category in activity.categories %}
-          <a class="badge badge-tag grey" style="padding: 10px; margin:10px;"><i class="fa fa-tag"></i>{{ _(category) }}</a>
+          <a class="badge badge-tag grey" href="{{ url_for('web.categories', category_name=category)}}"style="padding: 10px; margin:10px;"><i class="fa fa-tag"></i>{{ _(category) }}</a>
         {% endfor %}
       </div>
     {% endif %}

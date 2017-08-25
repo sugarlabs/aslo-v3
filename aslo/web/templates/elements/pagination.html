@@ -14,6 +14,14 @@
               {{ url_for('web.search', name=[search_query], page=pagination.prev_page) }}
             {% endif %}">&laquo;
           </a>
+        {% elif category_query %}
+            <a class="page-link" href="
+             {% if ignore_lang %} 
+               {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page, ignore_lang=true) }}
+             {% else %}
+               {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page) }}
+             {% endif %}">&laquo;
+            </a> 
         {% else %}
           <a class="page-link" href="
             {% if ignore_lang %}
@@ -36,6 +44,14 @@
               {{ url_for('web.search', name=[search_query], page=i) }}
             {% endif %}">{{ i }}
           </a>
+         {% elif category_query %}
+            <a class="page-link" href="
+            {% if ignore_lang %} 
+              {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page, ignore_lang=true) }}
+            {% else %}
+              {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page) }}
+            {% endif %}">&laquo;
+           </a> 
         {% else %}
           <a class="page-link" href="
             {% if ignore_lang %}
@@ -60,6 +76,14 @@
               {{ url_for('web.search', name=[search_query], page=pagination.next_page) }}
             {% endif %}">&raquo;
           </a>
+        {% elif category_query %}
+          <a class="page-link" href="
+            {% if ignore_lang %} 
+              {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page, ignore_lang=true) }}
+            {% else %}
+              {{ url_for('web.categories', category_name=category_query, page=pagination.prev_page) }}
+            {% endif %}">&laquo;
+          </a> 
         {% else %}
           <a class="page-link" href="
             {% if ignore_lang %}

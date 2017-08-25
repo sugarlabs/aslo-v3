@@ -20,7 +20,7 @@
     {% endfor %} 
   {% endif %} 
   
-  {% with pagination=activities, search_query=search_query, ignore_lang=ignore_lang %} 
+  {% with pagination=activities, search_query=search_query, category_query=category_query, ignore_lang=ignore_lang %} 
     {% include "elements/pagination.html" %} 
   {% endwith %} 
 {% endblock %}
