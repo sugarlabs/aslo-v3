@@ -179,7 +179,7 @@ def invoke_bundle_build(repo_path):
 
 def compare_version_in_bundlename_and_metadata(tmp_bundle_path, metadata):
     bundle_name = os.path.basename(tmp_bundle_path)
-    match = re.search('^[A-Za-z0-9_]+-([0-9]+.?[0-9]*).xo$', bundle_name)
+    match = re.search(r'^\w+-(\d+.?\d*).xo$', bundle_name)
     bundle_version = match.group(1) if match else None
     if metadata['activity_version'] != bundle_version:
         raise ReleaseError(
