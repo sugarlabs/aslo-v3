@@ -1,5 +1,6 @@
 // To remove unused files, run commands 1 and 2.
 // To only add files, run command 2.
+// Make sure you are in the fonts directory, or you risk file loss for command 1!
 // 1. $ find . ! -name 'fonturls.txt' -type f -exec rm -f {} +
 // 2. $ wget --content-disposition --trust-server-names -nc -i ./fonturls.txt
 https://fonts.gstatic.com/s/opensans/v14/59ZRklaO5bWGqF5A9baEEYX0hVgzZQUfRDuZrPvH3D8.woff2
